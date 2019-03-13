@@ -11,5 +11,8 @@
   "scripts": {
     "start": "backpack",
     "build": "backpck build"
+  },
+  "dependencies": {
+    "dotenv": "^6.2.0"
   }
 }
