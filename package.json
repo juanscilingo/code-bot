@@ -1,0 +1,8 @@
+{
+  "name": "code-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/juanscilingo/code-bot.git",
+  "author": "Juan Manuel Scilingo <juanscilingo@gmail.com>",
+  "license": "MIT"
+}
