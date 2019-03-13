@@ -4,5 +4,12 @@
   "main": "index.js",
   "repository": "https://github.com/juanscilingo/code-bot.git",
   "author": "Juan Manuel Scilingo <juanscilingo@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "backpack-core": "^0.8.3"
+  },
+  "scripts": {
+    "start": "backpack",
+    "build": "backpck build"
+  }
 }
