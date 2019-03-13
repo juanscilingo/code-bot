@@ -32,14 +32,20 @@ const run = (message, reply) => {
 
   if (!code) return sendHelp(message, reply);
 
+  const console_out = [],
+        fake_console = {
+          log: a => console_out.push(a),
+          error: _ => {},
+          warn: _ => {}
+        }
+
   const vm = new VM({
-    console: 'redirect',
     timeout: 1000,
-    sandbox: {}
+    sandbox: {
+      console: fake_console
+    }
   });
 
-  const console_out = []
-  vm.on('console.log', data => console_out.push(data))
   const return_value = vm.run(code)
 
   /* TODO: use multiple code blocks */
