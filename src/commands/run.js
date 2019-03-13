@@ -32,15 +32,28 @@ const run = (message, reply) => {
 
   if (!code) return sendHelp(message, reply);
 
+  const console_out = [],
+        fake_console = {
+          log: a => console_out.push(a),
+          error: _ => {},
+          warn: _ => {}
+        }
+
   const vm = new VM({
     timeout: 1000,
-    sandbox: {}
+    sandbox: {
+      console: fake_console
+    }
   });
 
-  const result = vm.run(code);
+  const return_value = vm.run(code)
 
-  if (reply) return reply.edit(result, { code: true, embed: null });
-  else return message.channel.send(result, { code: true });
+  /* TODO: use multiple code blocks */
+  let out = console_out.length ? `Console output:\r\n${ console_out.join("\r\n") }\r\n` : ''
+  out = `${ out }Return value: ${ return_value }`
+
+  if (reply) return reply.edit(out, { code: true, embed: null });
+  else return message.channel.send(out, { code: true });
 };
 
 export default {
