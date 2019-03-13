@@ -1,14 +1,7 @@
 import { RichEmbed } from "discord.js";
 import * as commands from "./commands";
 import { addReply, hasReply, getReply, removeReply } from "./replyLog";
-
-const FIRST_WORD_REGEX = /^([\w\-]+)/;
-
-const messageMatchesCommand = (message, command) => {
-  const match = FIRST_WORD_REGEX.exec(message.content.substr(1));
-  if (!match) return false;
-  return command === match[0];
-};
+import { messageMatchesCommand } from "./helpers/commandHelpers";
 
 const helpEmbed = new RichEmbed()
   .setTitle("Help")
@@ -33,26 +26,27 @@ export default client => {
   client.on("message", message => {
     if (message.author == client.user) return;
 
-    if (message.content.startsWith(process.env.COMMAND_CHARACTER)) {
-      const commandToExecute = Object.values(commands).find(command =>
-        messageMatchesCommand(message, command.expression)
-      );
+    try {
+      if (message.content.startsWith(process.env.COMMAND_PREFIX)) {
+        const commandToExecute = Object.values(commands).find(command =>
+          messageMatchesCommand(message, command.expression)
+        );
 
-      if (commandToExecute) {
-        try {
+        if (commandToExecute) {
           commandToExecute
             .execute(message)
             .then(reply => addReply(message.id, reply));
-        } catch (err) {
+        } else {
           message.channel
-            .send(`ERROR: ${err}`)
+            .send("Whoops, I didn't understand that", helpEmbed)
             .then(reply => addReply(message.id, reply));
         }
-      } else {
-        message.channel
-          .send("Whoops, I didn't understand that", helpEmbed)
-          .then(reply => addReply(message.id, reply));
       }
+    } catch (err) {
+      console.error(err);
+      message.channel
+        .send(`Whoops, an error occurred`)
+        .then(reply => addReply(message.id, reply));
     }
   });
 
@@ -62,7 +56,7 @@ export default client => {
     if (hasReply(oldMessage.id)) {
       const reply = getReply(oldMessage.id);
 
-      if (!newMessage.content.startsWith(process.env.COMMAND_CHARACTER))
+      if (!newMessage.content.startsWith(process.env.COMMAND_PREFIX))
         return reply.edit("Whoops, I didn't understand that", helpEmbed);
 
       const commandToExecute = Object.values(commands).find(command =>
