@@ -33,10 +33,14 @@ const run = (message, reply) => {
   if (!code) return sendHelp(message, reply);
 
   const console_out = [],
+        fake_console_fn = original_fn => a => {
+          console_out.push(a)
+          return original_fn(a)
+        },
         fake_console = {
-          log: a => console_out.push(a),
-          error: _ => {},
-          warn: _ => {}
+          log: fake_console_fn(console.log),
+          error: fake_console_fn(console.error),
+          warn: fake_console_fn(console.warn),
         }
 
   const vm = new VM({
