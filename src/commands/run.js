@@ -20,7 +20,10 @@ const sendHelp = message => {
       **\\\`\\\`\\\`**
     `);
 
-  message.channel.send(embed);
+  message.channel.send(
+    "It looks like you didn't include a **javascript** codeblock in your message",
+    embed
+  );
 };
 
 const run = message => {
