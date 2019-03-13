@@ -5,14 +5,14 @@
   "repository": "https://github.com/juanscilingo/code-bot.git",
   "author": "Juan Manuel Scilingo <juanscilingo@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
-    "backpack-core": "^0.8.3"
-  },
   "scripts": {
     "start": "backpack",
     "build": "backpck build"
   },
   "dependencies": {
     "dotenv": "^6.2.0"
+  },
+  "devDependencies": {
+    "backpack-core": "^0.8.3"
   }
 }
