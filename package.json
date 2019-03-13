@@ -7,7 +7,12 @@
   "license": "MIT",
   "scripts": {
     "start": "backpack",
-    "build": "backpck build"
+    "build": "backpack build",
+    "predocker:build": "yarn build",
+    "docker:build": "cross-conf-env docker image build . -t $npm_package_name:$npm_package_version",
+    "predocker:run": "yarn docker:build",
+    "docker:run": "cross-conf-env docker run --name $npm_package_name -d $npm_package_name:$npm_package_version",
+    "docker:clean": "cross-conf-env docker rm -f $npm_package_name"
   },
   "dependencies": {
     "discord.js": "^11.4.2",
@@ -15,6 +20,7 @@
     "vm2": "^3.6.10"
   },
   "devDependencies": {
-    "backpack-core": "^0.8.3"
+    "backpack-core": "^0.8.3",
+    "cross-conf-env": "^1.1.2"
   }
 }
