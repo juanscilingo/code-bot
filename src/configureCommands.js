@@ -1,13 +1,11 @@
 import * as commands from "./commands";
 
-const extractCommandFromMessage = message => {
-  let fullCommand = message.content.substr(1);
-  return fullCommand.split(" ")[0];
-};
+const FIRST_WORD_REGEX = /^([\w\-]+)/;
 
 const messageMatchesCommand = (message, command) => {
-  const receivedCommand = extractCommandFromMessage(message);
-  return command === receivedCommand;
+  const match = FIRST_WORD_REGEX.exec(message.content.substr(1));
+  if (!match) return false;
+  return command === match[0];
 };
 
 export default client => {
@@ -21,8 +19,15 @@ export default client => {
         messageMatchesCommand(message, command.expression)
       );
 
-      if (commandToExecute) commandToExecute.execute(message);
-      else message.channel.send("Whoops, I didn't understand that");
+      if (commandToExecute) {
+        try {
+          commandToExecute.execute(message);
+        } catch (err) {
+          message.channel.send(`ERROR: ${err}`);
+        }
+      } else {
+        message.channel.send("Whoops, I didn't understand that");
+      }
     }
   });
 };

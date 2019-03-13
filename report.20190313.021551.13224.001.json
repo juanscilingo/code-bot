@@ -1,0 +1,310 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "location": "OnFatalError",
+    "filename": "report.20190313.021551.13224.001.json",
+    "dumpEventTime": "2019-03-13T02:15:51Z",
+    "processId": 13224,
+    "commandLine": [
+      "node",
+      "C:\\Users\\juan8\\Desktop\\Projects\\code-bot\\build\\main.js"
+    ],
+    "nodejsVersion": "v11.10.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "11.10.0",
+      "v8": "7.0.276.38-node.17",
+      "uv": "1.26.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "67",
+      "nghttp2": "1.34.0",
+      "napi": "4",
+      "llhttp": "1.1.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1a",
+      "cldr": "34.0",
+      "icu": "63.1",
+      "tz": "2018e",
+      "unicode": "11.0"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v11.10.0/node-v11.10.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v11.10.0/node-v11.10.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v11.10.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.17763",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "host": "JUAN-PC"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff7f144dd6e",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+9902"
+    },
+    {
+      "pc": "0x00007ff7f144cc36",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+5494"
+    },
+    {
+      "pc": "0x00007ff7f144c4a2",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+3554"
+    },
+    {
+      "pc": "0x00007ff7f154a3ed",
+      "symbol": "uv_loop_fork+83805"
+    },
+    {
+      "pc": "0x00007ff7f1940f1e",
+      "symbol": "v8::internal::FatalProcessOutOfMemory+798"
+    },
+    {
+      "pc": "0x00007ff7f1940e57",
+      "symbol": "v8::internal::FatalProcessOutOfMemory+599"
+    },
+    {
+      "pc": "0x00007ff7f19f0e74",
+      "symbol": "v8::internal::Heap::RootIsImmortalImmovable+14900"
+    },
+    {
+      "pc": "0x00007ff7f19e6994",
+      "symbol": "v8::internal::Heap::CollectGarbage+7556"
+    },
+    {
+      "pc": "0x00007ff7f19e5068",
+      "symbol": "v8::internal::Heap::CollectGarbage+1112"
+    },
+    {
+      "pc": "0x00007ff7f19eeab7",
+      "symbol": "v8::internal::Heap::RootIsImmortalImmovable+5751"
+    },
+    {
+      "pc": "0x00007ff7f19eeb36",
+      "symbol": "v8::internal::Heap::RootIsImmortalImmovable+5878"
+    },
+    {
+      "pc": "0x00007ff7f1b778e1",
+      "symbol": "v8::internal::Factory::NewFillerObject+49"
+    },
+    {
+      "pc": "0x00007ff7f1c30cea",
+      "symbol": "v8::internal::StoreBuffer::StoreBufferOverflow+27082"
+    },
+    {
+      "pc": "0x000001d51efd0461",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 1527463936,
+    "totalCommittedMemory": 1527463936,
+    "usedMemory": 1364045616,
+    "availableMemory": 112301312,
+    "memoryLimit": 1526909922,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 524288,
+        "committedMemory": 524288,
+        "capacity": 515584,
+        "used": 33520,
+        "available": 482064
+      },
+      "new_space": {
+        "memorySize": 33554432,
+        "committedMemory": 33554432,
+        "capacity": 16498688,
+        "used": 14377128,
+        "available": 2121560
+      },
+      "old_space": {
+        "memorySize": 1489702912,
+        "committedMemory": 1489702912,
+        "capacity": 1457912784,
+        "used": 1348215096,
+        "available": 109697688
+      },
+      "code_space": {
+        "memorySize": 1048576,
+        "committedMemory": 1048576,
+        "capacity": 708672,
+        "used": 708672,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 1060864,
+        "committedMemory": 1060864,
+        "capacity": 462080,
+        "used": 462080,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 1572864,
+        "committedMemory": 1572864,
+        "capacity": 249120,
+        "used": 249120,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 0,
+        "used": 0,
+        "available": 0
+      }
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=C:": "C:\\Users\\juan8\\Desktop\\Projects\\code-bot",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "ANDROID_HOME": "C:\\Users\\juan8\\AppData\\Local\\Android\\Sdk",
+    "APPDATA": "C:\\Users\\juan8\\AppData\\Roaming",
+    "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "true",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "Tue Apr 24 03:20:55 2018",
+    "CLASSPATH": ".;",
+    "COMMAND_CHARACTER": ">",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "JUAN-PC",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "DISCORD_BOT_TOKEN": "NTU1MjI4MTIwNTEzNTExNDU2.D2oOXA.1FFFlERfoUTHUJSMVgnZgmh-s_Y",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "HOME": "C:\\Users\\juan8",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\juan8",
+    "INIT_CWD": "C:\\Users\\juan8\\Desktop\\Projects\\code-bot",
+    "JAVA_HOME": "\"C:\\Program Files\\Java\\jdk1.8.0_172\"",
+    "LANG": "en_US.UTF-8",
+    "LOCALAPPDATA": "C:\\Users\\juan8\\AppData\\Local",
+    "LOGONSERVER": "\\\\JUAN-PC",
+    "NODE": "C:\\Program Files\\nodejs\\node.exe",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"start\"],\"original\":[\"start\"]}",
+    "npm_config_bin_links": "true",
+    "npm_config_ignore_optional": "",
+    "npm_config_ignore_scripts": "",
+    "npm_config_init_license": "MIT",
+    "npm_config_init_version": "1.0.0",
+    "npm_config_registry": "https://registry.yarnpkg.com",
+    "npm_config_save_prefix": "^",
+    "npm_config_strict_ssl": "true",
+    "npm_config_user_agent": "yarn/1.9.4 npm/? node/v11.10.0 win32 x64",
+    "npm_config_version_commit_hooks": "true",
+    "npm_config_version_git_message": "v%s",
+    "npm_config_version_git_sign": "",
+    "npm_config_version_git_tag": "true",
+    "npm_config_version_tag_prefix": "v",
+    "npm_execpath": "C:\\Program Files (x86)\\Yarn\\bin\\yarn.js",
+    "npm_lifecycle_event": "start",
+    "npm_lifecycle_script": "backpack",
+    "npm_node_execpath": "C:\\Program Files\\nodejs\\node.exe",
+    "npm_package_author_email": "juanscilingo@gmail.com",
+    "npm_package_author_name": "Juan Manuel Scilingo",
+    "npm_package_dependencies_discord_js": "^11.4.2",
+    "npm_package_dependencies_dotenv": "^6.2.0",
+    "npm_package_description": "Discord bot that evaluates javascript expressions",
+    "npm_package_devDependencies_backpack_core": "^0.8.3",
+    "npm_package_license": "MIT",
+    "npm_package_main": "index.js",
+    "npm_package_name": "code-bot",
+    "npm_package_readmeFilename": "README.md",
+    "npm_package_repository_type": "git",
+    "npm_package_repository_url": "https://github.com/juanscilingo/code-bot.git",
+    "npm_package_scripts_build": "backpck build",
+    "npm_package_scripts_start": "backpack",
+    "npm_package_version": "1.0.0",
+    "NUMBER_OF_PROCESSORS": "8",
+    "OneDrive": "C:\\Users\\juan8\\OneDrive",
+    "OneDriveConsumer": "C:\\Users\\juan8\\OneDrive",
+    "OS": "Windows_NT",
+    "Path": "C:\\Users\\juan8\\Desktop\\Projects\\code-bot\\node_modules\\.bin;C:\\Users\\juan8\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Users\\juan8\\Desktop\\Projects\\code-bot\\node_modules\\.bin;C:\\Users\\juan8\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\140\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\140\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\Client SDK\\ODBC\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\ManagementStudio\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Java\\jdk1.8.0_172\\bin;C:\\Program Files (x86)\\ZeroTier\\One\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\juan8\\AppData\\Local\\Android\\Sdk\\tools;C:\\Program Files (x86)\\dotnet\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Program Files\\Amazon\\AWSCLI\\bin\\;C:\\Program Files\\Watchman;C:\\Program Files\\RethinkDB;C:\\Program Files\\nodejs\\;C:\\Users\\juan8\\AppData\\Roaming\\Python\\Python36\\Scripts;C:\\Users\\juan8\\AppData\\Local\\Programs\\Python\\Python36-32\\Scripts\\;C:\\Users\\juan8\\AppData\\Local\\Programs\\Python\\Python36-32\\;C:\\Users\\juan8\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\juan8\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\Java\\jdk1.8.0_172\\bin;C:\\Program Files\\SQL Operations Studio\\bin;C:\\Users\\juan8\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\juan8\\AppData\\Local\\Android\\Sdk\\emulator;C:\\Users\\juan8\\.dotnet\\tools;C:\\Users\\juan8\\AppData\\Local\\atom\\bin;C:\\Users\\juan8\\AppData\\Local\\Yarn\\bin;C:\\Users\\juan8\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\RethinkDB;C:\\Users\\juan8\\AppData\\Roaming\\npm;C:\\Users\\juan8\\AppData\\Roaming\\Python\\Python36\\Scripts;C:\\Program Files\\heroku\\bin;C:\\Users\\juan8\\AppData\\Local\\now-cli",
+    "PATH": "C:\\Users\\juan8\\Desktop\\Projects\\code-bot/node_modules/.bin:C:\\Users\\juan8\\Desktop\\Projects\\code-bot\\node_modules\\.bin;C:\\Users\\juan8\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Users\\juan8\\Desktop\\Projects\\code-bot\\node_modules\\.bin;C:\\Users\\juan8\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\140\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\140\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\Client SDK\\ODBC\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\ManagementStudio\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Java\\jdk1.8.0_172\\bin;C:\\Program Files (x86)\\ZeroTier\\One\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\juan8\\AppData\\Local\\Android\\Sdk\\tools;C:\\Program Files (x86)\\dotnet\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Program Files\\Amazon\\AWSCLI\\bin\\;C:\\Program Files\\Watchman;C:\\Program Files\\RethinkDB;C:\\Program Files\\nodejs\\;C:\\Users\\juan8\\AppData\\Roaming\\Python\\Python36\\Scripts;C:\\Users\\juan8\\AppData\\Local\\Programs\\Python\\Python36-32\\Scripts\\;C:\\Users\\juan8\\AppData\\Local\\Programs\\Python\\Python36-32\\;C:\\Users\\juan8\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\juan8\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\Java\\jdk1.8.0_172\\bin;C:\\Program Files\\SQL Operations Studio\\bin;C:\\Users\\juan8\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\juan8\\AppData\\Local\\Android\\Sdk\\emulator;C:\\Users\\juan8\\.dotnet\\tools;C:\\Users\\juan8\\AppData\\Local\\atom\\bin;C:\\Users\\juan8\\AppData\\Local\\Yarn\\bin;C:\\Users\\juan8\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\RethinkDB;C:\\Users\\juan8\\AppData\\Roaming\\npm;C:\\Users\\juan8\\AppData\\Roaming\\Python\\Python36\\Scripts;C:\\Program Files\\heroku\\bin;C:\\Users\\juan8\\AppData\\Local\\now-cli",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.CPL",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 60 Stepping 3, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "3c03",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Users\\juan8\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\PowerShell\\Modules\\;C:\\Program Files (x86)\\AWS Tools\\PowerShell\\",
+    "PUBLIC": "C:\\Users\\Public",
+    "SESSIONNAME": "Console",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\juan8\\AppData\\Local\\Temp",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.32.1",
+    "TMP": "C:\\Users\\juan8\\AppData\\Local\\Temp",
+    "USERDOMAIN": "JUAN-PC",
+    "USERDOMAIN_ROAMINGPROFILE": "JUAN-PC",
+    "USERNAME": "juan8",
+    "USERPROFILE": "C:\\Users\\juan8",
+    "windir": "C:\\WINDOWS",
+    "YARN_WRAP_OUTPUT": "false"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\MSASN1.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\System32\\profapi.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\WINDOWS\\System32\\cfgmgr32.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\System32\\powrprof.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\System32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\WINDOWS\\System32\\fwpuclnt.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll"
+  ]
+}
