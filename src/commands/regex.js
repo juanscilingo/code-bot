@@ -18,7 +18,7 @@ const sendHelp = (message, reply, text) => {
 };
 
 const getTextWithMatches = (text, regex) =>
-  text.replace(regex, match => `**${match}**`);
+  text.replace(regex, match => `​**${match}**​`);
 
 const getMatchesEmbed = (text, regex) => {
   const textWithMatches = getTextWithMatches(text, regex);
