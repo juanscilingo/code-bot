@@ -18,7 +18,7 @@ const sendHelp = (message, reply, text) => {
 };
 
 const getTextWithMatches = (text, regex) =>
-  text.replace(regex, match => `​**${match}**​`); // There's an invisible character before and after the asterisks in order to avoid markdown formatting problems
+  text.replace(regex, match => `​__**${match}**__​`); // There's an invisible character before and after the asterisks in order to avoid markdown formatting problems
 
 const getMatchesEmbed = (text, regex) => {
   const textWithMatches = getTextWithMatches(text, regex);
