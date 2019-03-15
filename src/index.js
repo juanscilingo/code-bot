@@ -1,15 +1,10 @@
-import dotenv from "dotenv";
 import Discord from "discord.js";
+import "./boot.js";
 import configureCommands from "./configureCommands";
-
-dotenv.config();
 
 const { DISCORD_BOT_TOKEN } = process.env;
 
-console.log(`Discord bot token: ${DISCORD_BOT_TOKEN}`);
-
 const client = new Discord.Client();
-
 configureCommands(client);
 
 client.on("ready", () => {

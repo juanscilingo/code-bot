@@ -1,24 +1,13 @@
-import { RichEmbed } from "discord.js";
 import { VM } from "vm2";
 import { extractCodeBlock } from "../helpers/commandHelpers";
+import { runEmbed } from "../helpers/embeds";
 
 const sendHelp = (message, reply) => {
-  const embed = new RichEmbed().setTitle("How to run code?").setColor(0xff0000)
-    .setDescription(`Please include a **javascript** code block in your message like this:
-      >run
-      **\\\`\\\`\\\`js**
-      const num1 = 2;
-      const num2 = 5;
-
-      num1 + num2
-      **\\\`\\\`\\\`**
-    `);
-
   const content =
     "It looks like you didn't include a **javascript** codeblock in your message";
 
-  if (reply) return reply.edit(content, { code: false, embed });
-  else return message.channel.send(content, { code: false, embed });
+  if (reply) return reply.edit(content, { code: false, embed: runEmbed });
+  else return message.channel.send(content, { code: false, embed: runEmbed });
 };
 
 const run = (message, reply) => {

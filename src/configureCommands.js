@@ -1,26 +1,7 @@
-import { RichEmbed } from "discord.js";
 import * as commands from "./commands";
 import { addReply, hasReply, getReply, removeReply } from "./replyLog";
 import { messageMatchesCommand } from "./helpers/commandHelpers";
-
-const helpEmbed = new RichEmbed()
-  .setTitle("Help")
-  .setColor(0x0000ff)
-  .setDescription(`Here's the full list of available commands:`)
-  .addField(
-    "run",
-    `The run command lets you evaluate a javascript expression. You must include a **javascript** codeblock with the code you want to evaluate: 
-
-    >run
-    **\\\`\\\`\\\`js**
-    const num1 = 2;
-    const num2 = 5;
-
-    num1 + num2
-    **\\\`\\\`\\\`**
-    `,
-    true
-  );
+import { helpEmbed } from "./helpers/embeds";
 
 export default client => {
   client.on("message", message => {

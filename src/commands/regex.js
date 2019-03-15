@@ -1,20 +1,9 @@
-import { RichEmbed } from "discord.js";
-import { VM } from "vm2";
 import { extractRegex, extractCodeBlock } from "../helpers/commandHelpers";
+import { regexEmbed } from "../helpers/embeds";
 
 const sendHelp = (message, reply, text) => {
-  const embed = new RichEmbed()
-    .setTitle("How test regular expressions?")
-    .setColor(0xff0000)
-    .setDescription(`Please include a code block in your message like this:
-      >regex <YOUR_REGEX>
-      **\\\`\\\`\\\`**
-      this is the text that is going to be tested against the provided regular expression
-      **\\\`\\\`\\\`**
-    `);
-
-  if (reply) return reply.edit(text, { code: false, embed });
-  else return message.channel.send(text, { code: false, embed });
+  if (reply) return reply.edit(text, { code: false, embed: regexEmbed });
+  else return message.channel.send(text, { code: false, embed: regexEmbed });
 };
 
 const getTextWithMatches = (text, regex) =>
