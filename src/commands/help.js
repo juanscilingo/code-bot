@@ -1,4 +1,5 @@
-import { helpEmbed } from "../helpers/embeds";
+import { helpEmbed } from "./embeds";
+import { helpExpressions as expressions } from "./expressions";
 
 const help = (message, reply) => {
   if (reply) return reply.edit("", { code: false, helpEmbed });
@@ -6,6 +7,6 @@ const help = (message, reply) => {
 };
 
 export default {
-  expression: "help",
+  expressions,
   execute: help
 };

@@ -2,10 +2,10 @@ import { JS_CODE_REGEX, CODE_REGEX, FIRST_WORD_REGEX } from "./regex";
 
 const { COMMAND_PREFIX } = process.env;
 
-export const messageMatchesCommand = (message, command) => {
-  const match = FIRST_WORD_REGEX.exec(message.content.substr(1));
-  if (!match) return false;
-  return command === match[0];
+export const messageMatchesCommand = (message, commandExpressions) => {
+  const givenCommand = FIRST_WORD_REGEX.exec(message.content.substr(1));
+  if (!givenCommand) return false;
+  return commandExpressions.includes(givenCommand[0]);
 };
 
 export const extractRegex = message => {

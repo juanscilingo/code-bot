@@ -1,6 +1,7 @@
 import { VM } from "vm2";
 import { extractCodeBlock } from "../helpers/commandHelpers";
-import { runEmbed } from "../helpers/embeds";
+import { runEmbed } from "./embeds";
+import { runExpressions as expressions } from "./expressions";
 
 const sendHelp = (message, reply) => {
   const content =
@@ -46,6 +47,6 @@ const run = (message, reply) => {
 };
 
 export default {
-  expression: "run",
+  expressions,
   execute: run
 };

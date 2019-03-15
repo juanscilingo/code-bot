@@ -1,7 +1,7 @@
 import * as commands from "./commands";
 import { addReply, hasReply, getReply, removeReply } from "./replyLog";
 import { messageMatchesCommand } from "./helpers/commandHelpers";
-import { helpEmbed } from "./helpers/embeds";
+import { helpEmbed } from "./commands/embeds";
 
 export default client => {
   client.on("message", message => {
@@ -10,7 +10,7 @@ export default client => {
     try {
       if (message.content.startsWith(process.env.COMMAND_PREFIX)) {
         const commandToExecute = Object.values(commands).find(command =>
-          messageMatchesCommand(message, command.expression)
+          messageMatchesCommand(message, command.expressions)
         );
 
         if (commandToExecute) {
@@ -41,7 +41,7 @@ export default client => {
         return reply.edit("Whoops, I didn't understand that", helpEmbed);
 
       const commandToExecute = Object.values(commands).find(command =>
-        messageMatchesCommand(newMessage, command.expression)
+        messageMatchesCommand(newMessage, command.expressions)
       );
 
       if (commandToExecute) {

@@ -1,5 +1,6 @@
 import { extractRegex, extractCodeBlock } from "../helpers/commandHelpers";
-import { regexEmbed } from "../helpers/embeds";
+import { regexEmbed } from "./embeds";
+import { regexExpressions as expressions } from "./expressions";
 
 const sendHelp = (message, reply, text) => {
   if (reply) return reply.edit(text, { code: false, embed: regexEmbed });
@@ -46,6 +47,6 @@ const regex = (message, reply) => {
 };
 
 export default {
-  expression: "regex",
+  expressions,
   execute: regex
 };
