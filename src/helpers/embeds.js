@@ -26,6 +26,11 @@ const regexField = {
   `
 };
 
+const pingField = {
+  name: `**${COMMAND_PREFIX}ping**`,
+  description: "Check if the bot is up and running"
+};
+
 export const runEmbed = new RichEmbed()
   .setTitle(runField.name)
   .setColor(0x34ace0)
@@ -40,4 +45,5 @@ export const helpEmbed = new RichEmbed()
   .setTitle("Full list of available commands")
   .setColor(0x34ace0)
   .addField(runField.name, runField.description)
-  .addField(regexField.name, regexField.description);
+  .addField(regexField.name, regexField.description)
+  .addField(pingField.name, pingField.description);
