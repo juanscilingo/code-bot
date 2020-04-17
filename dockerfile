@@ -8,10 +8,10 @@ COPY package*.json ./
 
 USER node
 
-RUN yarn install
+RUN npm install
 
 COPY --chown=node:node . .
 
-RUN yarn build
+RUN npm build
 
 CMD [ "node", "build/main.js" ]
