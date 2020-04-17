@@ -1,3 +1,4 @@
+import 'source-map-support/register'
 import Discord from "discord.js";
 import "./boot.js";
 import configureCommands from "./configureCommands";
