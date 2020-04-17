@@ -1,6 +1,7 @@
 import { extractRegex, extractCodeBlock } from "../helpers/commandHelpers";
 import { regexEmbed } from "./embeds";
 import { regexExpressions as expressions } from "./expressions";
+import { RichEmbed } from 'discord.js';
 
 const sendHelp = (message, reply, text) => {
   if (reply) return reply.edit(text, { code: false, embed: regexEmbed });
