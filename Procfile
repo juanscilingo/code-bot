@@ -1,1 +1,1 @@
-worker: npm run build-and-run
+worker: node build/main.js
