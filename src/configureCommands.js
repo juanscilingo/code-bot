@@ -14,12 +14,10 @@ export default client => {
         );
 
         if (commandToExecute) {
+          console.log('Processing command: ', message.content);
+
           commandToExecute
             .execute(message)
-            .then(reply => addReply(message.id, reply));
-        } else {
-          message.channel
-            .send("Whoops, I didn't understand that", helpEmbed)
             .then(reply => addReply(message.id, reply));
         }
       }
@@ -32,7 +30,7 @@ export default client => {
   });
 
   client.on("messageUpdate", (oldMessage, newMessage) => {
-    if (newMessage.author == client.user) return;
+    if (newMessage.author === client.user) return;
 
     if (hasReply(oldMessage.id)) {
       const reply = getReply(oldMessage.id);

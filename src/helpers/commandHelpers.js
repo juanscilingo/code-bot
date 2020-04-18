@@ -8,13 +8,16 @@ export const messageMatchesCommand = (message, commandExpressions) => {
   return commandExpressions.includes(givenCommand[0]);
 };
 
+export const extractArgument = message => {
+  const withoutPrefix = message.content.slice(COMMAND_PREFIX.length);
+  return withoutPrefix.substr(withoutPrefix.indexOf(' ') + 1).trim();
+}
+
+export const extractArgumentArray = message => extractArgument(message).replace(/\n/g, " ").split(" ");
+
 export const extractRegex = message => {
-  const args = message.content
-    .slice(COMMAND_PREFIX)
-    .trim()
-    .replace(/\n/g, " ")
-    .split(" ");
-  const regexParameter = args[1];
+  const args = extractArgumentArray(message);
+  const regexParameter = args[0];
 
   try {
     const flags = regexParameter.replace(/.*\/([gimy]*)$/, "$1");
