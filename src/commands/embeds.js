@@ -3,7 +3,8 @@ import {
   helpExpressions,
   runExpressions,
   pingExpressions,
-  regexExpressions
+  regexExpressions,
+  mdnExpressions
 } from "./expressions";
 const { COMMAND_PREFIX } = process.env;
 
@@ -51,6 +52,16 @@ const pingField = {
   description: "Check if the bot is up and running"
 };
 
+const mdnField = {
+  name: `**${COMMAND_PREFIX}mdn <YOUR_SEARCH_QUERY>**\r\nAliases: **${mdnExpressions
+    .slice(1)
+    .join(", ")}**`,
+  description: "Search MDN for information about a js/html/css topic",
+  help: `
+    >mdn <YOUR_SEARCH_QUERY>
+  `
+};
+
 export const runEmbed = new RichEmbed()
   .setTitle(runField.name)
   .setColor(0x34ace0)
@@ -67,4 +78,10 @@ export const helpEmbed = new RichEmbed()
   .addField(runField.name, runField.description)
   .addField(regexField.name, regexField.description)
   .addField(pingField.name, pingField.description)
-  .addField(helpField.name, helpField.description);
+  .addField(helpField.name, helpField.description)
+  .addField(mdnField.name, mdnField.description);
+
+export const mdnEmbed = new RichEmbed()
+  .setTitle(mdnField.name)
+  .setColor(0x34ace0)
+  .setDescription(`${mdnField.description}\r\n\r\n${mdnField.help}`);

@@ -10,7 +10,9 @@ export const messageMatchesCommand = (message, commandExpressions) => {
 
 export const extractArgument = message => {
   const withoutPrefix = message.content.slice(COMMAND_PREFIX.length);
-  return withoutPrefix.substr(withoutPrefix.indexOf(' ') + 1).trim();
+  const firstSpaceIndex = withoutPrefix.indexOf(' ');
+  if (firstSpaceIndex === -1) return '';
+  else return withoutPrefix.substr(firstSpaceIndex + 1).trim();
 }
 
 export const extractArgumentArray = message => extractArgument(message).replace(/\n/g, " ").split(" ");
