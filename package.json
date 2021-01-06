@@ -15,7 +15,7 @@
     "docker:clean": "cross-conf-env docker rm -f $npm_package_name"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "discord.js": "^11.4.2",
     "dotenv": "^6.2.0",
     "source-map-support": "^0.5.16",
