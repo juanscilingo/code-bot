@@ -19,7 +19,7 @@
     "discord.js": "^11.4.2",
     "dotenv": "^6.2.0",
     "source-map-support": "^0.5.16",
-    "vm2": "^3.6.10"
+    "vm2": "^3.9.4"
   },
   "devDependencies": {
     "backpack-core": "^0.8.3",
